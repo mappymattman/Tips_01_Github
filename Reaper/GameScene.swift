@@ -26,14 +26,14 @@ class GameScene: SKScene {
         }
         
         // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        let h = w * 2.0
+        let w = (self.size.width + self.size.height) * 0.1
+        let h = w * 2.8
         self.spinnyNode = SKShapeNode.init(ellipseOf: CGSize.init(width: w, height: h))
         
         if let spinnyNode = self.spinnyNode {
             spinnyNode.lineWidth = 2.5
             
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
+            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 0.8)))
             spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
                                               SKAction.fadeOut(withDuration: 0.5),
                                               SKAction.removeFromParent()]))
